@@ -6,17 +6,22 @@
     <title>Login - Capacitaciones CERTUS</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
+<body class="login-body">
     <div class="login-container">
         <h2>Portal Docente CERTUS</h2>
-        <form id="loginForm">
-            <label for="email">Correo Institucional:</label>
-            <input type="email" id="email" placeholder="usuario@certus.edu.pe" required>
-            
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" required>
-            
-            <button type="submit">Ingresar</button>
+        <p class="subtitulo">Gestión de capacitaciones docentes</p>
+
+        <form id="loginForm" novalidate>
+            <label for="email">Correo institucional</label>
+            <input type="email" id="email" placeholder="usuario@certus.edu.pe"
+                   autocomplete="username" required>
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" placeholder="Ingresa tu contraseña"
+                   autocomplete="current-password" required>
+
+            <button type="submit" id="btnIngresar">Ingresar</button>
+            <p id="mensaje" class="mensaje" role="alert"></p>
         </form>
     </div>
     <script src="./js/main.js"></script>
