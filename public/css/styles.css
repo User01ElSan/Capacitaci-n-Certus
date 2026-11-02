@@ -1,65 +1,174 @@
+:root {
+    --azul: #004080;
+    --azul-oscuro: #003366;
+    --azul-claro: #e6eef7;
+    --fondo: #f4f7f6;
+    --texto: #1f2937;
+    --gris: #6b7280;
+    --borde: #d1d5db;
+    --rojo: #dc2626;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6;
+    background-color: var(--fondo);
+    color: var(--texto);
     margin: 0;
     padding: 0;
 }
-.login-container {
-    width: 350px;
-    margin: 100px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+
+/* ---------- Login ---------- */
+.login-body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--azul), #1e66d0);
 }
+
+.login-container {
+    width: 100%;
+    max-width: 380px;
+    padding: 32px 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.login-container h2 {
+    margin: 0 0 4px;
+    color: var(--azul);
+    text-align: center;
+}
+
+.subtitulo {
+    margin: 0 0 24px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--gris);
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* ---------- Formularios y botones ---------- */
 input, button {
     width: 100%;
     padding: 12px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    margin: 6px 0 10px;
+    border-radius: 6px;
+    border: 1px solid var(--borde);
+    font-size: 1rem;
 }
+
+input:focus {
+    outline: none;
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px var(--azul-claro);
+}
+
 button {
-    background-color: #004080;
+    background-color: var(--azul);
     color: white;
     border: none;
     font-weight: bold;
     cursor: pointer;
+    margin-top: 16px;
+    transition: background 0.2s;
 }
+
 button:hover {
-    background-color: #003366;
+    background-color: var(--azul-oscuro);
 }
+
+button:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.mensaje {
+    min-height: 1.2em;
+    margin: 8px 0 0;
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--rojo);
+}
+
+/* ---------- Tablas (dashboards) ---------- */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
     background: white;
+    border-radius: 8px;
+    overflow: hidden;
 }
+
 th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #e5e7eb;
     padding: 12px;
     text-align: left;
 }
+
 th {
-    background-color: #004080;
+    background-color: var(--azul);
     color: white;
 }
+
+tbody tr:hover {
+    background-color: var(--azul-claro);
+}
+
+/* ---------- Cabecera y contenido (dashboards) ---------- */
 header {
-    background: #004080;
+    background: var(--azul);
     color: white;
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
+
 header a {
     color: white;
     text-decoration: none;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     padding: 8px 15px;
     border-radius: 4px;
+    transition: background 0.2s;
 }
+
+header a:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
 main {
     padding: 30px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
 }
