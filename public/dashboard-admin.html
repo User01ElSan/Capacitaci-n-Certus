@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del Gestor - Capacitaciones CERTUS</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Panel de Control - Gestor / Administrador</h1>
+        <a href="index.html">Cerrar Sesión</a>
+    </header>
+    <main>
+        <section class="card">
+            <h2>Seguimiento de Capacitaciones Docentes</h2>
+            <p>Visualiza el reporte general y supervisa el cumplimiento de todo el personal docente.</p>
+            <div style="margin: 20px 0;">
+                <button onclick="alert('Generando reporte general en Excel/PDF...')" style="width: auto; padding: 10px 20px;">Exportar Reportes Globales</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Docente</th>
+                        <th>Correo Institucional</th>
+                        <th>Cursos Aprobados</th>
+                        <th>Progreso General</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Juan Pérez</td>
+                        <td>jperez@certus.edu.pe</td>
+                        <td>3 / 3</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>María Gómez</td>
+                        <td>mgomez@certus.edu.pe</td>
+                        <td>1 / 3</td>
+                        <td>33%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+</html>
