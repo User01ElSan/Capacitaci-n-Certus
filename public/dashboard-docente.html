@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del Docente - Capacitaciones CERTUS</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Panel de Capacitaciones - Docente</h1>
+        <a href="index.html">Cerrar Sesión</a>
+    </header>
+    <main>
+        <section class="card">
+            <h2>Mis Capacitaciones Realizadas</h2>
+            <p>Consulta el avance de tus cursos y descarga tus constancias oficiales.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Curso / Módulo</th>
+                        <th>Estado</th>
+                        <th>Constancia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Metodologías Ágiles y Scrum</td>
+                        <td><span style="color: green; font-weight: bold;">Completado</span></td>
+                        <td><button onclick="alert('Descargando constancia en PDF...')">Descargar PDF</button></td>
+                    </tr>
+                    <tr>
+                        <td>Herramientas Digitales para el Aula</td>
+                        <td><span style="color: orange; font-weight: bold;">En Progreso</span></td>
+                        <td><button disabled style="background-color: #ccc; cursor: not-allowed;">No disponible</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+</html>
