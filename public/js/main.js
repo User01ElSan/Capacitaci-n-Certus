@@ -38,6 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function descargarConstanciaPDF(nombreDocente, nombreCurso) {
+    if (!window.jspdf) {
+        alert("La librería de PDF aún se está cargando. Espera un segundo e inténtalo de nuevo.");
+        return;
+    }
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
