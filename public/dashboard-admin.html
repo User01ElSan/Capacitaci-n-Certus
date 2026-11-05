@@ -18,9 +18,9 @@
             <h2>Seguimiento de Capacitaciones Docentes</h2>
             <p>Visualiza el reporte general y supervisa el cumplimiento de todo el personal docente.</p>
             <div style="margin: 20px 0;">
-                <button onclick="alert('Generando reporte general en Excel/PDF...')" style="width: auto; padding: 10px 20px;">Exportar Reportes Globales</button>
+                <button onclick="exportarTablaAExcel('tablaReportes', 'Reporte_Capacitaciones_CERTUS')" style="width: auto; padding: 10px 20px;">Exportar Reportes Globales</button>
             </div>
-            <table>
+            <table id="tablaReportes">
                 <thead>
                     <tr>
                         <th>Docente</th>

@@ -78,7 +78,15 @@ function descargarConstanciaPDF(nombreDocente, nombreCurso) {
 
 
 function exportarTablaAExcel(tableID, filename = '') {
+    if (!window.XLSX) {
+        alert("La librería de Excel aún se está cargando. Espera un segundo e inténtalo de nuevo.");
+        return;
+    }
     const table = document.getElementById(tableID);
+    if (!table) {
+        alert("No se encontró la tabla para exportar.");
+        return;
+    }
     const wb = XLSX.utils.table_to_book(table, { sheet: "Reporte" });
-    XLSX.writeFile(wb, filename ? filename + '.xlsx' : 'Reporte_Capacitaciones.xlsx');
+    XLSX.writeFile(wb, filename ? filename + '.xlsx' : 'Reporte_Capaticaciones.xlsx');
 }
