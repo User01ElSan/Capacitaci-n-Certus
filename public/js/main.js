@@ -22,12 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Rol según el correo (lógica del avance, luego se valida con base de datos)
+            
             const rol = (email.includes("admin") || email.includes("gestor"))
                 ? "admin"
                 : "docente";
 
-            // Guardamos la sesión para usarla en los dashboards
+            
             localStorage.setItem("usuario", JSON.stringify({ email, rol }));
 
             window.location.href = rol === "admin"

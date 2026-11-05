@@ -103,7 +103,7 @@ button:disabled {
     color: var(--rojo);
 }
 
-/* ---------- Tablas (dashboards) ---------- */
+/* ---------- Tablas ---------- */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -128,7 +128,7 @@ tbody tr:hover {
     background-color: var(--azul-claro);
 }
 
-/* ---------- Cabecera y contenido (dashboards) ---------- */
+/* ---------- Cabecera y contenido ---------- */
 header {
     background: var(--azul);
     color: white;
@@ -157,7 +157,6 @@ main {
     padding: 30px;
 }
 
-/* ---------- Responsive ---------- */
 @media (max-width: 600px) {
     header {
         padding: 15px 20px;
