@@ -7,13 +7,19 @@
     "start": "node src/app.js",
     "dev": "nodemon src/app.js"
   },
-  "keywords": ["certus", "capacitaciones", "node", "express"],
+  "keywords": [
+    "certus",
+    "capacitaciones",
+    "node",
+    "express"
+  ],
   "author": "Equipo de Desarrollo",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mongoose": "^9.12.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
