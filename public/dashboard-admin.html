@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel del Gestor - Capacitaciones CERTUS</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
 <body>
     <header>
@@ -18,9 +16,16 @@
             <h2>Seguimiento de Capacitaciones Docentes</h2>
             <p>Visualiza el reporte general y supervisa el cumplimiento de todo el personal docente.</p>
             <div style="margin: 20px 0;">
-                <button onclick="exportarTablaAExcel('tablaReportes', 'Reporte_Capacitaciones_CERTUS')" style="width: auto; padding: 10px 20px;">Exportar Reportes Globales</button>
+                <button onclick="alert('Generando reporte general en Excel/PDF...')" style="width: auto; padding: 10px 20px;">Exportar Reportes Globales</button>
             </div>
-            <table id="tablaReportes">
+
+            <div class="filtro">
+                <label for="buscarDocente">Buscar docente</label>
+                <input type="search" id="buscarDocente" placeholder="Escribe un nombre o correo..." autocomplete="off">
+                <span id="contadorDocentes" class="contador"></span>
+            </div>
+
+            <table id="tablaDocentes">
                 <thead>
                     <tr>
                         <th>Docente</th>
@@ -44,6 +49,7 @@
                     </tr>
                 </tbody>
             </table>
+            <p id="sinResultados" class="sin-resultados" hidden>No se encontraron docentes con esa búsqueda.</p>
         </section>
     </main>
     <script src="./js/main.js"></script>
