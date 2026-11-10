@@ -103,7 +103,7 @@ button:disabled {
     color: var(--rojo);
 }
 
-/* ---------- Tablas ---------- */
+/* ---------- Tablas (dashboards) ---------- */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -128,7 +128,7 @@ tbody tr:hover {
     background-color: var(--azul-claro);
 }
 
-/* ---------- Cabecera y contenido ---------- */
+/* ---------- Cabecera y contenido (dashboards) ---------- */
 header {
     background: var(--azul);
     color: white;
@@ -163,6 +163,36 @@ main {
     padding: 24px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Filtro de búsqueda ---------- */
+.filtro {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.filtro label {
+    margin: 0;
+}
+
+.filtro input {
+    width: 100%;
+    max-width: 320px;
+    margin: 0;
+}
+
+.contador {
+    font-size: 0.85rem;
+    color: var(--gris);
+}
+
+.sin-resultados {
+    margin-top: 16px;
+    text-align: center;
+    color: var(--gris);
 }
 
 /* ---------- Responsive ---------- */
