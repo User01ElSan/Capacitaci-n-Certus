@@ -33,6 +33,41 @@ document.addEventListener("DOMContentLoaded", () => {
                 : "dashboard-docente.html";
         });
     }
+
+    // ---------- Filtro de búsqueda por docente (panel del gestor) ----------
+    const buscador = document.getElementById("buscarDocente");
+    const tabla = document.getElementById("tablaDocentes");
+
+    if (buscador && tabla) {
+        const contador = document.getElementById("contadorDocentes");
+        const sinResultados = document.getElementById("sinResultados");
+
+        // Quita tildes y pasa a minúsculas: "maria" encuentra "María"
+        const normalizar = (texto) =>
+            texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+        function filtrarDocentes() {
+            const termino = normalizar(buscador.value.trim());
+            const filas = tabla.querySelectorAll("tbody tr");
+            let visibles = 0;
+
+            filas.forEach((fila) => {
+                // Busca en la columna Docente y en la de Correo
+                const docente = normalizar(fila.cells[0].textContent);
+                const correo = normalizar(fila.cells[1].textContent);
+                const coincide = docente.includes(termino) || correo.includes(termino);
+
+                fila.hidden = !coincide;
+                if (coincide) visibles++;
+            });
+
+            contador.textContent = `Mostrando ${visibles} de ${filas.length}`;
+            sinResultados.hidden = visibles !== 0;
+        }
+
+        buscador.addEventListener("input", filtrarDocentes);
+        filtrarDocentes();
+    }
 });
 
 function descargarConstanciaDinamica(nombreCurso) {
